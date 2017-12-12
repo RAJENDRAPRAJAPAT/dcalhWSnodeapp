@@ -1,5 +1,5 @@
 {
-    "name": "app-service-hello-world",
+    "name": "dcalhnodeapp",
     "description": "Simple Hello World Node.js sample for Azure App Service",
     "version": "0.0.1",
     "private": true,
@@ -10,5 +10,8 @@
     },
     "scripts": {
         "start": "node index.js"
-    }
+    },
+     "dependencies": {
+    "documentdb": "^1.6.0"
+  }
 }
