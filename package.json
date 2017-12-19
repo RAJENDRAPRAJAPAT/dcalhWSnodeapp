@@ -9,7 +9,7 @@
         "node": ">=6.9.1"
     },
     "scripts": {
-        "start": "node index.js"
+        "start": "node webSocketServer.js"
     },
     "dependencies": {
         "documentdb": "^1.6.0",
