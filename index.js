@@ -24,7 +24,7 @@ var server = http.createServer(function(request, response) {
     .then(() => app.queryCollection())    
 	.then(() => { 	
 		
-		console.log(app.infoModel[0]);
+	console.log(app.infoModel[0]);
 	if(urlpath=='timeseries')
 	{	
         data=   app.infoModel;

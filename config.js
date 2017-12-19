@@ -17,5 +17,12 @@ config.timeseriesCollection = {
 	"query" : 'SELECT  c.Objectid,c.Temperature,c.Power,c.MinTemperature,c.MaxTemperature ,c.MinPower,c.MaxPower,c.Time FROM c'
 };
 
- 
+
+config.notificationCollection = {
+    "id": "Notifications",
+	"query" : "SELECT top 1  c.Objectid,c.Power,c.Notification,c.Time,c._ts FROM c order by c._ts desc "
+};
+
 module.exports = config;
+
+ 

@@ -1,0 +1,54 @@
+
+
+<html>
+
+
+<body>
+
+<div id='chatlog'></div>
+
+
+  <input type='text' id='message'/>
+ <input type="button" value="Send Message" onclick="sendMessage()">
+
+ <input type="button" value="Close Connection" onclick="CloseConnection()">
+
+</body>
+
+<script>
+
+//var WebSocket = require('websocket');
+
+var ws = new WebSocket('ws://localhost:1339', 'echo-protocol');
+
+
+
+function sendMessage(){
+    var message = document.getElementById('message').value;
+	
+	  
+    ws.send(message);
+}
+
+function CloseConnection(){
+     
+    ws.close();
+}
+
+ws.addEventListener("message", function(e) {
+    // The data is simply the message that we're sending back
+    var msg = e.data;
+
+    // Append the message
+    document.getElementById('chatlog').innerHTML += '<br>' + msg;
+});
+
+
+
+
+
+</script>
+
+
+
+</html>

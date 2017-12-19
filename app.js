@@ -61,6 +61,18 @@ app.getCollectionUrl=function(collectionName)
 			    console.log(`Querying collection through index:\n${config.infomodelCollection.id}\n`);				
 				console.log(`Querying Query:\n${collectionQuery}\n`);				
 		 }
+		 
+		  else if(collectionName=='notification')
+		 {
+				collectionUrl = `${databaseUrl}/colls/${config.notificationCollection.id}`;	
+			    collectionQuery=`${config.notificationCollection.query}`;	
+				
+					// build query to get data of last one minute	
+			   
+				
+			    console.log(`Querying collection through index:\n${config.notificationCollection.id}\n`);				
+				console.log(`Querying Query:\n${collectionQuery}\n`);				
+		 }
 }
 
 /**
@@ -142,7 +154,16 @@ app.queryCollection=function() {
 	
 	     console.log('Calling queryCollection Method \n');
 	    // app.getCollectionUrl();
+		
+		     /*  var finalQuery=collectionQuery;
+		        var d = new Date();		
+				var t1 = d.getTime();
+				var t2 = t1-60; 
+				finalQuery= finalQuery.replace('starttime', d)
+				finalQuery= finalQuery.replace('endtime', t2)
+				*/
     
+	           
 
     return new Promise((resolve, reject) => {
         client.queryDocuments(
